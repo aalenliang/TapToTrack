@@ -60,7 +60,9 @@ protocol AccountDelegate {
 }
 
 class Account {
-    init() {
+    static let shared = Account()
+
+    private init() {
         logs = NSKeyedUnarchiver.unarchiveObject(withFile: Log.ArchiveURL.path) as? [Log] ?? []
     }
 
@@ -102,6 +104,12 @@ extension Account {
 extension Account {
     func add(date: Date, change: Float) {
         logs.append(Log(date: date, change: change))
+    }
+
+    func edit(uuid: String, date: Date, change: Float) {
+        logs = logs.map {
+            $0.uuid == uuid ? Log(date: date, change: change) : $0
+        }
     }
 
     func delete(uuid: String) {

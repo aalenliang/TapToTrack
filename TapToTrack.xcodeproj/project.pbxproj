@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		390BD34F22565331009B2E46 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD34E22565331009B2E46 /* HomeTableViewCell.swift */; };
 		390BD35222565FE5009B2E46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 390BD35422565FE5009B2E46 /* InfoPlist.strings */; };
+		3968851B22A94A4400139A24 /* LogEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3968851A22A94A4300139A24 /* LogEditorViewController.swift */; };
 		39C518D32256461A004D515C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C518D22256461A004D515C /* AppDelegate.swift */; };
 		39C518D82256461A004D515C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39C518D62256461A004D515C /* Main.storyboard */; };
 		39C518DB2256461A004D515C /* TapToTrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39C518D92256461A004D515C /* TapToTrack.xcdatamodeld */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		390BD34E22565331009B2E46 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		390BD35322565FE5009B2E46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3968851A22A94A4300139A24 /* LogEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEditorViewController.swift; sourceTree = "<group>"; };
 		39C518CF22564619004D515C /* TapToTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapToTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C518D22256461A004D515C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39C518D72256461A004D515C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				39C5190722564DA1004D515C /* Account.swift */,
 				39C5190322564884004D515C /* HomeViewController.swift */,
 				390BD34E22565331009B2E46 /* HomeTableViewCell.swift */,
+				3968851A22A94A4300139A24 /* LogEditorViewController.swift */,
 				39C518D62256461A004D515C /* Main.storyboard */,
 				39C518DC2256461B004D515C /* Assets.xcassets */,
 				39C518DE2256461B004D515C /* LaunchScreen.storyboard */,
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3968851B22A94A4400139A24 /* LogEditorViewController.swift in Sources */,
 				39C5190822564DA1004D515C /* Account.swift in Sources */,
 				390BD34F22565331009B2E46 /* HomeTableViewCell.swift in Sources */,
 				39C518DB2256461A004D515C /* TapToTrack.xcdatamodeld in Sources */,

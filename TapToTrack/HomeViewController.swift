@@ -17,13 +17,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tipsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
-    let account = Account()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        account.delegate = self
+        Account.shared.delegate = self
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -34,70 +32,56 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func add(_ sender: Any) {
-        let alert = UIAlertController(title: "💰充值", message: nil, preferredStyle: .alert)
-
-        alert.addTextField { (textField) in
-            textField.keyboardType = .decimalPad
-            textField.placeholder = "请输入充值金额"
-        }
-
-        alert.addAction(UIAlertAction(title: "确定", style: .default, handler: { [weak alert] (_) in
-            guard let text = alert?.textFields?.first?.text, let change = Float(text) else {
-                return
-            }
-
-            self.account.add(date: Date(), change: change)
-        }))
-
-        alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
-
-        self.present(alert, animated: true, completion: nil)
+        performSegue(withIdentifier: "presentLogEditor", sender: Float(100))
     }
 
     @IBAction func log(_ sender: Any) {
-        let alert = UIAlertController(title: "👨‍⚕️消费", message: nil, preferredStyle: .alert)
+        performSegue(withIdentifier: "presentLogEditor", sender: Float(-100))
+    }
 
-        alert.addTextField { (textField) in
-            textField.keyboardType = .decimalPad
-            textField.text = "100"
-            textField.placeholder = "请输入消费金额"
-        }
-
-        alert.addAction(UIAlertAction(title: "确定", style: .default, handler: { [weak alert] (_) in
-            guard let text = alert?.textFields?.first?.text, let change = Float(text) else {
-                return
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "presentLogEditor", let vc = segue.destination as? LogEditorViewController {
+            if let log = sender as? Log {
+                vc.log = log
             }
 
-            self.account.add(date: Date(), change: -change)
-        }))
+            if let change = sender as? Float {
+                vc.segmentedControlShouldSelectIndex = change > 0 ? 0 : 1
+            }
 
-        alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
-
-        self.present(alert, animated: true, completion: nil)
+            vc.delegate = self
+        }
     }
 }
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return account.sortedLogs.count
+        return Account.shared.sortedLogs.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeTableViewCell
-        cell.log = account.sortedLogs[indexPath.row]
+        cell.log = Account.shared.sortedLogs[indexPath.row]
         return cell
     }
 }
 
 extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        let log = Account.shared.sortedLogs[indexPath.row]
+        performSegue(withIdentifier: "presentLogEditor", sender: log)
+    }
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .none:
             break
 
         case .delete:
-            let log = account.sortedLogs[indexPath.row]
-            account.delete(uuid: log.uuid)
+            let log = Account.shared.sortedLogs[indexPath.row]
+            Account.shared.delete(uuid: log.uuid)
 
         case .insert:
             break
@@ -114,8 +98,18 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: AccountDelegate {
     func refresh() {
-        moneyLabel.text = account.balanceText
-        moneyLabel.textColor = account.balance >= 0 ? Account.positiveColor : Account.negativeColor
+        moneyLabel.text = Account.shared.balanceText
+        moneyLabel.textColor = Account.shared.balance >= 0 ? Account.positiveColor : Account.negativeColor
         tableView.reloadData()
+    }
+}
+
+extension HomeViewController: LogEditorViewControllerDelegate {
+    func handleSave(log: Log?, date: Date, change: Float) {
+        if let log = log {
+            Account.shared.edit(uuid: log.uuid, date: date, change: change)
+        } else {
+            Account.shared.add(date: date, change: change)
+        }
     }
 }
