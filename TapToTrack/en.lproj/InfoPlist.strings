@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  TapToTrack
+
+  Created by Alen Liang on 2019/4/4.
+  Copyright © 2019 Alen Liang. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "👨‍⚕️记账小助手";

@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390BD34F22565331009B2E46 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BD34E22565331009B2E46 /* HomeTableViewCell.swift */; };
+		390BD35222565FE5009B2E46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 390BD35422565FE5009B2E46 /* InfoPlist.strings */; };
 		39C518D32256461A004D515C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C518D22256461A004D515C /* AppDelegate.swift */; };
-		39C518D52256461A004D515C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C518D42256461A004D515C /* ViewController.swift */; };
 		39C518D82256461A004D515C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39C518D62256461A004D515C /* Main.storyboard */; };
 		39C518DB2256461A004D515C /* TapToTrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39C518D92256461A004D515C /* TapToTrack.xcdatamodeld */; };
 		39C518DD2256461B004D515C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39C518DC2256461B004D515C /* Assets.xcassets */; };
 		39C518E02256461B004D515C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39C518DE2256461B004D515C /* LaunchScreen.storyboard */; };
 		39C518EB2256461C004D515C /* TapToTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C518EA2256461C004D515C /* TapToTrackTests.swift */; };
 		39C518F62256461C004D515C /* TapToTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C518F52256461C004D515C /* TapToTrackUITests.swift */; };
+		39C5190422564884004D515C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C5190322564884004D515C /* HomeViewController.swift */; };
+		39C5190822564DA1004D515C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C5190722564DA1004D515C /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		390BD34E22565331009B2E46 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		390BD35322565FE5009B2E46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		39C518CF22564619004D515C /* TapToTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapToTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C518D22256461A004D515C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39C518D42256461A004D515C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		39C518D72256461A004D515C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39C518DA2256461A004D515C /* TapToTrack.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TapToTrack.xcdatamodel; sourceTree = "<group>"; };
 		39C518DC2256461B004D515C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 		39C518F12256461C004D515C /* TapToTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapToTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C518F52256461C004D515C /* TapToTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToTrackUITests.swift; sourceTree = "<group>"; };
 		39C518F72256461C004D515C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39C5190322564884004D515C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		39C5190722564DA1004D515C /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +106,14 @@
 			isa = PBXGroup;
 			children = (
 				39C518D22256461A004D515C /* AppDelegate.swift */,
-				39C518D42256461A004D515C /* ViewController.swift */,
+				39C5190722564DA1004D515C /* Account.swift */,
+				39C5190322564884004D515C /* HomeViewController.swift */,
+				390BD34E22565331009B2E46 /* HomeTableViewCell.swift */,
 				39C518D62256461A004D515C /* Main.storyboard */,
 				39C518DC2256461B004D515C /* Assets.xcassets */,
 				39C518DE2256461B004D515C /* LaunchScreen.storyboard */,
 				39C518E12256461B004D515C /* Info.plist */,
+				390BD35422565FE5009B2E46 /* InfoPlist.strings */,
 				39C518D92256461A004D515C /* TapToTrack.xcdatamodeld */,
 			);
 			path = TapToTrack;
@@ -233,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39C518E02256461B004D515C /* LaunchScreen.storyboard in Resources */,
+				390BD35222565FE5009B2E46 /* InfoPlist.strings in Resources */,
 				39C518DD2256461B004D515C /* Assets.xcassets in Resources */,
 				39C518D82256461A004D515C /* Main.storyboard in Resources */,
 			);
@@ -259,9 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39C518D52256461A004D515C /* ViewController.swift in Sources */,
+				39C5190822564DA1004D515C /* Account.swift in Sources */,
+				390BD34F22565331009B2E46 /* HomeTableViewCell.swift in Sources */,
 				39C518DB2256461A004D515C /* TapToTrack.xcdatamodeld in Sources */,
 				39C518D32256461A004D515C /* AppDelegate.swift in Sources */,
+				39C5190422564884004D515C /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +309,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		390BD35422565FE5009B2E46 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				390BD35322565FE5009B2E46 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		39C518D62256461A004D515C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -367,7 +387,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -422,7 +442,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
