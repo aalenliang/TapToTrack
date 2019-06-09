@@ -25,7 +25,6 @@ class HomeViewController: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
-
         tableView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
 
         refresh()
@@ -93,6 +92,10 @@ extension HomeViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "删除"
     }
 }
 

@@ -37,6 +37,7 @@ class LogEditorViewController: UIViewController {
         ]
 
         datePicker.datePickerMode = .date
+        datePicker.locale = Locale(identifier: "zh-CN")
 
         if let log = log {
             datePicker.date = log.date
@@ -49,6 +50,25 @@ class LogEditorViewController: UIViewController {
         }
 
         dateChanged(self)
+        segmentChanged(self)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleKeyboardWillShow(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleKeyboardWillHide(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        changeTextField.resignFirstResponder()
     }
 
     @IBAction func dateChanged(_ sender: Any) {
@@ -65,13 +85,28 @@ class LogEditorViewController: UIViewController {
         // todo
     }
 
+    @objc func handleKeyboardWillShow(_ obj: NSNotification) {
+        guard let value = obj.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+                return
+        }
+
+        UIView.animate(withDuration: 0, animations: {
+            self.view.transform = CGAffineTransform(translationX: 0, y: -value.cgRectValue.height)
+        })
+    }
+
+    @objc func handleKeyboardWillHide(_ obj: NSNotification) {
+        UIView.animate(withDuration: 0, animations: {
+            self.view.transform = CGAffineTransform(translationX: 0, y: 0)
+        })
+    }
+
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
 
     @IBAction func save(_ sender: Any) {
         guard let text = changeTextField.text, let change = Float(text) else {
-            cancel(sender)
             return
         }
 

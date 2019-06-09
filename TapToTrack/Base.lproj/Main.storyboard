@@ -179,9 +179,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWa-v2-exo">
-                                        <rect key="frame" x="101" y="334" width="293" height="36"/>
+                                        <rect key="frame" x="101" y="332" width="293" height="40"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
                                             <action selector="changesChanged:" destination="ixt-6g-stE" eventType="editingDidEnd" id="wgd-up-Zwu"/>
@@ -231,7 +231,6 @@
                                     <constraint firstItem="bWa-v2-exo" firstAttribute="leading" secondItem="ltU-L2-h2r" secondAttribute="trailing" constant="20" id="mnV-48-TX9"/>
                                     <constraint firstItem="UuI-V8-JyP" firstAttribute="leading" secondItem="e22-0G-bJb" secondAttribute="leading" constant="20" id="qnv-DS-AGt"/>
                                     <constraint firstAttribute="trailing" secondItem="Zct-of-tEn" secondAttribute="trailing" constant="20" id="rRJ-SB-UET"/>
-                                    <constraint firstItem="bWa-v2-exo" firstAttribute="height" secondItem="ltU-L2-h2r" secondAttribute="height" id="w4F-Q0-M4K"/>
                                 </constraints>
                             </view>
                         </subviews>
